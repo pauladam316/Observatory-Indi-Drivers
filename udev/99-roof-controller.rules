@@ -1,0 +1,2 @@
+# /etc/udev/rules.d/99-roof-controller.rules
+SUBSYSTEM=="tty", KERNEL=="ttyACM0", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", ATTRS{serial}=="2423831363535160A061", SYMLINK+="tty_roof_controller"

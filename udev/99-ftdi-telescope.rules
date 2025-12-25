@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="B0004EQV", SYMLINK+="tty_telescope_controller", MODE="0660", GROUP="dialout"
