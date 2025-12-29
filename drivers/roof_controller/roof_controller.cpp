@@ -83,7 +83,10 @@ bool RoofController::initProperties()
     IUFillNumber(&TelemetryN[4], "LIMIT_U2", "Limit Switch U2", "%.0f", 0.0, 1.0, 1.0, 0.0);
     IUFillNumber(&TelemetryN[5], "LIMIT_L1", "Limit Switch L1", "%.0f", 0.0, 1.0, 1.0, 0.0);
     IUFillNumber(&TelemetryN[6], "LIMIT_L2", "Limit Switch L2", "%.0f", 0.0, 1.0, 1.0, 0.0);
-    IUFillNumberVector(&TelemetryNP, TelemetryN, 7, getDeviceName(), "TELEMETRY", "Telemetry", MAIN_CONTROL_TAB, IP_RO, 0, IPS_IDLE);
+    IUFillNumber(&TelemetryN[7], "ROOF_STATE", "Roof State", "%.0f", 0.0, 4.0, 1.0, 0.0);
+    IUFillNumber(&TelemetryN[8], "LOCK_STATE", "Lock State", "%.0f", 0.0, 4.0, 1.0, 0.0);
+    IUFillNumber(&TelemetryN[9], "ARM_STATE", "Arm State", "%.0f", 0.0, 1.0, 1.0, 0.0);
+    IUFillNumberVector(&TelemetryNP, TelemetryN, 10, getDeviceName(), "TELEMETRY", "Telemetry", MAIN_CONTROL_TAB, IP_RO, 0, IPS_IDLE);
 
     return true;
 }
@@ -547,6 +550,9 @@ void RoofController::parseStatus(const std::vector<uint8_t> &data)
     TelemetryN[4].value = limit_u2;
     TelemetryN[5].value = limit_l1;
     TelemetryN[6].value = limit_l2;
+    TelemetryN[7].value = roof_state;
+    TelemetryN[8].value = lock_state;
+    TelemetryN[9].value = isArmed ? 1.0 : 0.0;
     TelemetryNP.s = IPS_OK;
     IDSetNumber(&TelemetryNP, nullptr);
 

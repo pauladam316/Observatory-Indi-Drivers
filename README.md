@@ -140,12 +140,15 @@ Each driver will appear in INDI as a separate device. Serial port settings can b
   - Is Closed: 1.0 if fully closed, 0.0 otherwise
 - **LOCK_STATUS**: Number property with 1 value:
   - Lock State: 0=UNKNOWN, 1=RAISING/ENGAGING, 2=LOWERING/DISENGAGING, 3=RAISED/ENGAGED, 4=LOWERED/DISENGAGED
-- **TELEMETRY**: Number property with 7 values:
+- **TELEMETRY**: Number property with 10 values:
   - H-Bridge Current (A): Motor current draw
   - 5V Voltage (V): 5V supply voltage
   - 12V Voltage (V): 12V supply voltage
   - Limit Switch U1, U2: Upper limit switches (0 or 1)
   - Limit Switch L1, L2: Lower limit switches (0 or 1)
+  - Roof State: 0=UNKNOWN, 1=RAISING, 2=LOWERING, 3=RAISED, 4=LOWERED
+  - Lock State: 0=UNKNOWN, 1=RAISING/ENGAGING, 2=LOWERING/DISENGAGING, 3=RAISED/ENGAGED, 4=LOWERED/DISENGAGED
+  - Arm State: 0=Disarmed, 1=Armed
 
 ## Protocol Implementation
 

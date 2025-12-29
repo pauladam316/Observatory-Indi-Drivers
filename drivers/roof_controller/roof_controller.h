@@ -75,9 +75,9 @@ private:
     INumberVectorProperty LockStatusNP;
     INumber LockStatusN[1]; // Lock state
 
-    // Telemetry (voltages, current, limit switches)
+    // Telemetry (voltages, current, limit switches, states)
     INumberVectorProperty TelemetryNP;
-    INumber TelemetryN[7]; // H-bridge current, 5V voltage, 12V voltage, Limit U1, Limit U2, Limit L1, Limit L2
+    INumber TelemetryN[10]; // H-bridge current, 5V voltage, 12V voltage, Limit U1, Limit U2, Limit L1, Limit L2, Roof state, Lock state, Arm state
 
     // Helper functions
     bool sendCommand(uint8_t commandByte);
